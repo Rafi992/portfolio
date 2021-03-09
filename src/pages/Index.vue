@@ -1,5 +1,6 @@
 <template>
   <Layout>
+    <h1>Witaj na blogu</h1>
     <div v-for="edge in $page.posts.edges" :key="edge.node.id">
       <g-link :to="'blog/' + edge.node.slug">
         <h2>{{ edge.node.title }}</h2>
