@@ -13,4 +13,12 @@ module.exports = {
       },
     },
   ],
+  templates: {
+    ContentfulBlogPost: [
+      {
+        path: '/blog/:title',
+        component: './src/templates/ContentfulPost.vue',
+      },
+    ],
+  },
 };
