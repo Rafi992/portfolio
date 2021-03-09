@@ -5,19 +5,20 @@ module.exports = {
   },
   plugins: [
     {
-      use: '@gridsome/source-contentful',
+      use: '@gridsome/source-datocms',
       options: {
-        space: process.env.CONTENTFUL_SPACE_ID, // required
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN, // required
-        typeName: 'Contentful',
+        apiToken: process.env.DCMS_TOKEN, // required
+        previewMode: false,
+        apiUrl: 'https://site-api.datocms.com',
+        typeName: 'DatoCms',
       },
     },
   ],
   templates: {
-    ContentfulBlogPost: [
+    DatoCmsPost: [
       {
         path: '/blog/:title',
-        component: './src/templates/ContentfulPost.vue',
+        component: './src/templates/DatoPost.vue',
       },
     ],
   },

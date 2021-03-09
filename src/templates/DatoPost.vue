@@ -1,25 +1,20 @@
 <template>
   <Layout>
     <div>
-      <g-image class="hero-image" :src="$page.post.heroImage.file.url" />
+      <g-image class="hero-image" :src="$page.post.heroImage.url" />
       <h1>{{ $page.post.title }}</h1>
-      <p>{{ $page.post.description }}</p>
-      <p v-html="$page.post.tags" />
     </div>
   </Layout>
 </template>
 
 <page-query>
 query Post($id: ID!) {
-  post: contentfulBlogPost(id: $id) {
+  post: datoCmsPost(id: $id) {
+    id
     title
-    description
-    tags
     slug
     heroImage {
-      file {
-        url
-      }
+      url
     }
   }
 }
